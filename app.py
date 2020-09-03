@@ -47,6 +47,17 @@ def index():
             save_dic['message'] = _Data.message
             save_list.append(save_dic)
             save_dic = {}
+        b='hi'
+
+        add=0
+        for i in range(SaveMsgNumber):
+            try:
+                money = int(save_list[i]['account'])
+            except:
+                money = int(0)
+            add += money
+        a= 'hello'
+
         
         return render_template('index_form.html',**locals())
 
