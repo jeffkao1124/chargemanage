@@ -40,15 +40,6 @@
 	});
 </script>
 
-<script>
-    var n=10;
-    var a=[];
-    for(var i=0;i<n;i++){ 
-        a.push("<tr><td>"+(i+1)+"</td><td></td></tr>");
-    }
-    document.write('<table border="1">'+a.join("\n")+"</table>")
-</script>
-
 </head>
 <body style="background-color:#FFEEDD;">
 
@@ -59,12 +50,14 @@
     <p align="left" style="font-size:20px;"><strong>目前記帳清單：</strong></p>
     <table style="border:8px #FFD382 solid;" cellpadding="10" border='1'>
         <thead>
+            <th>編號</th>
             <th>項目</th>
             <th>金額</th>
         </thead>
         <tbody>
             {% for _data in save_list %}
                 <tr>
+                    <td>{{ _data.number }}</td>
                     <td>{{ _data.message }}</td>
                     <td>{{ _data.account }}</td>
                 </tr>

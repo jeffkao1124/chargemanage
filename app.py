@@ -41,12 +41,12 @@ def index():
         save_list = []
         count=0
         for _Data in data_SaveData:
+            count+=1
+            save_dic['number'] = _Data.count
             save_dic['account'] = _Data.account
             save_dic['message'] = _Data.message
             save_list.append(save_dic)
             save_dic = {}
-            count+=1
-
         
         return render_template('index_form.html',**locals())
 
