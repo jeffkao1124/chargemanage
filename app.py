@@ -35,8 +35,8 @@ class usermessage(db.Model):
 def index():
     if request.method == 'POST':
         userId = request.values['userId']
-        SaveMsgNumber = usermessage.query.order_by(usermessage.birth_date).filter(usermessage.user_id==userId).filter(usermessage.status=='save').count()
-        data_SaveData = usermessage.query.order_by(usermessage.birth_date).filter(usermessage.user_id==userId).filter(usermessage.status=='save')
+        SaveMsgNumber = usermessage.query.order_by(usermessage.birth_date).filter(usermessage.user_id==userId).filter(usermessage.status=='save').filter(usermessage.type=='user').count()
+        data_SaveData = usermessage.query.order_by(usermessage.birth_date).filter(usermessage.user_id==userId).filter(usermessage.status=='save').filter(usermessage.type=='user')
         save_dic = {}
         save_list = []
         count=0
