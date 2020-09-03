@@ -41,7 +41,6 @@ def index():
         save_list = []
         count=0
         for _Data in data_SaveData:
-            save_dic['group_num'] = _Data.group_num
             save_dic['account'] = _Data.account
             save_dic['message'] = _Data.message
             save_list.append(save_dic)
