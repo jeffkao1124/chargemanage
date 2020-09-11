@@ -2,7 +2,7 @@ from apscheduler.schedulers.blocking import BlockingScheduler
 
 sched = BlockingScheduler()
 
-@sched.scheduled_job('cron', day_of_week='sun-sat', minute='*/20')
+@sched.scheduled_job('cron', day_of_week='mon-sun', minute='*/20')
 def scheduled_job():
     url = "https://data0manage.herokuapp.com/"
     conn = urllib.request.urlopen(url)
