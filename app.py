@@ -118,7 +118,7 @@ def index():
             color.append("purple")
         
         plt.rcParams['figure.dpi'] = 200  # 分辨率
-        plt.figure(facecolor='#FFEEDD',edgecolor='black',figsize=(2.7,1.8))
+        plt.figure(facecolor='#FFEEDD',edgecolor='black',figsize=(3,2.25))
         plt.rcParams['savefig.dpi'] = 150  # 圖片像素
         #plt.rcParams["font.sans-serif"]= "Microsoft JhengHei"
         # plt.rcParams['figure.figsize'] = (1.5, 1.0)  # 设置figure_size尺寸800x400
@@ -133,7 +133,7 @@ def index():
                 labels = category,               #數值標籤
                 autopct = "%.0f%%",              #數值百分比(留到百分比幾位)
                 colors = color,                   #顏色
-                # explode = separeted,             #是否有突出資料
+                # explode = separeted,            #是否有突出資料
                 radius = 1.3,                    #半徑
                 pctdistance = 0.65,              #數值與圓餅圖的圓心距離
                 center = (-10,0),                #圓心座標
