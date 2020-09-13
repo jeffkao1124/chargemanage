@@ -85,6 +85,38 @@ def index():
             add += money
         result = str(add)+'元'
 
+        data=[]
+        category=[]
+        colors=[]
+        if food!=0:
+            data.append(food)
+            category.append('Food')
+            colors.append("red")
+        if cloth!=0:
+            data.append(cloth)
+            category.append('Clothing')
+            colors.append("lightblue")
+        if sleep!=0:
+            data.append(sleep)
+            category.append('Housing')
+            colors.append("pink")
+        if walk!=0:
+            data.append(walk)
+            category.append('Transportation')
+            colors.append("green")
+        if education!=0:
+            data.append(education)
+            category.append('Education')
+            colors.append("orange")
+        if play!=0:
+            data.append(play)
+            category.append('Entertainment')
+            colors.append("blue")
+        if unknown!=0:
+            data.append(unknown)
+            category.append('Others')
+            colors.append("purple")
+        
         plt.rcParams['figure.dpi'] = 200  # 分辨率
         plt.figure(facecolor='#FFEEDD',edgecolor='black',figsize=(2.5,1.875))
         plt.rcParams['savefig.dpi'] = 150  # 圖片像素
@@ -93,9 +125,9 @@ def index():
 
 
         plt.rcParams["font.family"]="SimHei"
-        data = [food,cloth,sleep,walk,education,play,unknown]
-        category =['Food','Clothing','Housing',"Transportation",'Education','Entertainment','Others']
-        color = ["red", "lightblue", "pink", "green", "orange","blue","purple"]
+        # data = [food,cloth,sleep,walk,education,play,unknown]
+        # category =['Food','Clothing','Housing',"Transportation",'Education','Entertainment','Others']
+        # color = ["red", "lightblue", "pink", "green", "orange","blue","purple"]
         # separeted = (0, 0, 0, 0, 0, 0)
         plt.pie(data,                            #資料數值
                 labels = category,               #數值標籤
