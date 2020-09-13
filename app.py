@@ -109,7 +109,7 @@ def index():
                 labeldistance = 1.1,             #標籤顯示位置
                 shadow = True)                   #是否有陰影
         plt.axis('equal')      #讓圓餅圖比例相等           
-        plt.legend(loc = "center right")
+        # plt.legend(loc = "center right")
         plt.title("Category")
 
         buffer = BytesIO()
