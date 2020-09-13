@@ -6,6 +6,10 @@ from sqlalchemy import desc
 from flask import render_template
 import numpy as np
 import sys
+from matplotlib import pyplot as plt
+from matplotlib.font_manager import FontProperties
+import base64
+from io import BytesIO
 
 app=Flask(__name__)
 app.config[
@@ -49,7 +53,31 @@ def index():
             save_dic = {}
 
         add=0
+        food=0
+        cloth=0
+        sleep=0
+        walk=0
+        education=0
+        play=0
+        unknown=0
         for i in range(SaveMsgNumber):
+            Message = save_list[i]['message']
+            if "食/" in Message:
+                food+= int(save_list[i]['account'])
+            elif "衣/" in Message:
+                cloth+= int(save_list[i]['account'])
+            elif "住/" in Message:
+                sleep+= int(save_list[i]['account'])
+            elif "行/" in Message:
+                walk+= int(save_list[i]['account'])
+            elif "育/" in Message:
+                education+= int(save_list[i]['account'])
+            elif "樂/" in Message:
+                play+= int(save_list[i]['account'])
+            elif "其他/" in Message:
+                unknown+= int(save_list[i]['account'])
+            else:
+                continue
             try:
                 money = int(save_list[i]['account'])
             except:
@@ -57,7 +85,41 @@ def index():
             add += money
         result = str(add)+'元'
 
+        plt.rcParams['figure.dpi'] = 200  # 分辨率
+        plt.figure(facecolor='#FFEEDD',edgecolor='black',figsize=(2.5,1.875))
+        plt.rcParams['savefig.dpi'] = 150  # 圖片像素
+        #plt.rcParams["font.sans-serif"]= "Microsoft JhengHei"
+        # plt.rcParams['figure.figsize'] = (1.5, 1.0)  # 设置figure_size尺寸800x400
 
+
+        plt.rcParams["font.family"]="SimHei"
+        data = [food,cloth,sleep,walk,education,play,unknown]
+        category =['Food','Clothing','Housing',"Transportation",'Education','Entertainment','Others']
+        color = ["red", "lightblue", "pink", "green", "orange","blue","purple"]
+        separeted = (0, 0, 0, 0, 0, 0, 0)
+        plt.pie(data,                            #資料數值
+                labels = category,               #數值標籤
+                autopct = "%.0f%%",              #數值百分比(留到百分比幾位)
+                colors = color                   #顏色
+                explode = separeted,             #是否有突出資料
+                radius = 1.5,                    #半徑
+                pctdistance = 0.65,              #數值與圓餅圖的圓心距離
+                center = (-10,0),                #圓心座標
+                textprops = {"fontsize" : 12},   #文字大小
+                labeldistance = 1.1,             #標籤顯示位置
+                shadow = True)                   #是否有陰影
+        plt.axis('equal')      #讓圓餅圖比例相等           
+        plt.legend(loc = "center right")
+        plt.title("Category")
+
+        buffer = BytesIO()
+        plt.savefig(buffer)
+        plot_data = buffer.getvalue()
+        # 將matplotlib圖片轉換為HTML
+        imb = base64.b64encode(plot_data)  # 對plot_data進行編碼
+        ims = imb.decode()
+        imd = "data:image/png;base64," + ims
+        img = imd
         
         return render_template('index_form.html',**locals())
 
