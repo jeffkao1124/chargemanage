@@ -134,11 +134,11 @@ def index():
                 autopct = "%.0f%%",              #數值百分比(留到百分比幾位)
                 colors = color,                   #顏色
                 # explode = separeted,            #是否有突出資料
-                radius = 1.3,                    #半徑
+                radius = 1.2,                    #半徑
                 pctdistance = 0.65,              #數值與圓餅圖的圓心距離
                 center = (-10,0),                #圓心座標
                 textprops = {"fontsize" : 6},   #文字大小
-                labeldistance = 1.5,             #標籤顯示位置
+                labeldistance = 1.6,             #標籤顯示位置
                 shadow = False)                   #是否有陰影
         plt.axis('equal')      #讓圓餅圖比例相等           
         # plt.legend(loc = "center right")
