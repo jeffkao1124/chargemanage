@@ -105,7 +105,7 @@ def index():
                 radius = 1.5,                    #半徑
                 pctdistance = 0.65,              #數值與圓餅圖的圓心距離
                 center = (-10,0),                #圓心座標
-                textprops = {"fontsize" : 12},   #文字大小
+                textprops = {"fontsize" : 8},   #文字大小
                 labeldistance = 1.1,             #標籤顯示位置
                 shadow = True)                   #是否有陰影
         plt.axis('equal')      #讓圓餅圖比例相等           
