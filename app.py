@@ -96,12 +96,12 @@ def index():
         data = [food,cloth,sleep,walk,education,play,unknown]
         category =['Food','Clothing','Housing',"Transportation",'Education','Entertainment','Others']
         color = ["red", "lightblue", "pink", "green", "orange","blue","purple"]
-        separeted = (0, 0, 0, 0, 0, 0, 0)
+        # separeted = (0, 0, 0, 0, 0, 0)
         plt.pie(data,                            #資料數值
                 labels = category,               #數值標籤
                 autopct = "%.0f%%",              #數值百分比(留到百分比幾位)
-                colors = color                   #顏色
-                explode = separeted,             #是否有突出資料
+                colors = color,                   #顏色
+                # explode = separeted,             #是否有突出資料
                 radius = 1.5,                    #半徑
                 pctdistance = 0.65,              #數值與圓餅圖的圓心距離
                 center = (-10,0),                #圓心座標
