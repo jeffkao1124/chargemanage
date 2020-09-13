@@ -87,35 +87,35 @@ def index():
 
         data=[]
         category=[]
-        colors=[]
+        color=[]
         if food!=0:
             data.append(food)
             category.append('Food')
-            colors.append("red")
+            color.append("red")
         if cloth!=0:
             data.append(cloth)
             category.append('Clothing')
-            colors.append("lightblue")
+            color.append("lightblue")
         if sleep!=0:
             data.append(sleep)
             category.append('Housing')
-            colors.append("pink")
+            color.append("pink")
         if walk!=0:
             data.append(walk)
             category.append('Transportation')
-            colors.append("green")
+            color.append("green")
         if education!=0:
             data.append(education)
             category.append('Education')
-            colors.append("orange")
+            color.append("orange")
         if play!=0:
             data.append(play)
             category.append('Entertainment')
-            colors.append("blue")
+            color.append("blue")
         if unknown!=0:
             data.append(unknown)
             category.append('Others')
-            colors.append("purple")
+            color.append("purple")
         
         plt.rcParams['figure.dpi'] = 200  # 分辨率
         plt.figure(facecolor='#FFEEDD',edgecolor='black',figsize=(2.5,1.875))
