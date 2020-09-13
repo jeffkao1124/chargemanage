@@ -111,7 +111,7 @@ def index():
         if play!=0:
             data.append(play)
             category.append('Entertainment')
-            color.append("blue")
+            color.append("yellow")
         if unknown!=0:
             data.append(unknown)
             category.append('Others')
