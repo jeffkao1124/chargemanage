@@ -91,27 +91,27 @@ def index():
         if food!=0:
             data.append(food)
             category.append('Food')
-            color.append("red")
+            color.append("#ffd966")
         if cloth!=0:
             data.append(cloth)
             category.append('Clothing')
-            color.append("lightblue")
+            color.append("#9dc3e5")
         if sleep!=0:
             data.append(sleep)
             category.append('Housing')
-            color.append("pink")
+            color.append("#c9c9c9")
         if walk!=0:
             data.append(walk)
             category.append('Transportation')
-            color.append("green")
+            color.append("#c5e0b4")
         if education!=0:
             data.append(education)
             category.append('Education')
-            color.append("orange")
+            color.append("#f4b182")
         if play!=0:
             data.append(play)
             category.append('Entertainment')
-            color.append("yellow")
+            color.append("#ffd8f9")
         if unknown!=0:
             data.append(unknown)
             category.append('Others')
