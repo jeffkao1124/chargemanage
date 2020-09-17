@@ -88,34 +88,42 @@ def index():
         data=[]
         category=[]
         color=[]
+        separeted =[]
         if food!=0:
             data.append(food)
             category.append('Food')
             color.append("#ffd966")
+            separeted.append(0.02)
         if cloth!=0:
             data.append(cloth)
             category.append('Clothing')
             color.append("#9dc3e5")
+            separeted.append(0.02)
         if sleep!=0:
             data.append(sleep)
             category.append('Housing')
             color.append("#c9c9c9")
+            separeted.append(0.02)
         if walk!=0:
             data.append(walk)
             category.append('Transportation')
             color.append("#c5e0b4")
+            separeted.append(0.02)
         if education!=0:
             data.append(education)
             category.append('Education')
             color.append("#f4b182")
+            separeted.append(0.02)
         if play!=0:
             data.append(play)
             category.append('Entertainment')
             color.append("#ffd8f9")
+            separeted.append(0.02)
         if unknown!=0:
             data.append(unknown)
             category.append('Others')
             color.append("purple")
+            separeted.append(0.02)
         
         plt.rcParams['figure.dpi'] = 200  # 分辨率
         plt.figure(facecolor='#FFEEDD',edgecolor='black',figsize=(2.6,2))
@@ -131,13 +139,13 @@ def index():
                 labels = category,               #數值標籤
                 autopct = "%.0f%%",              #數值百分比(留到百分比幾位)
                 colors = color,                   #顏色
-                # explode = separeted,            #是否有突出資料
+                explode = separeted,            #是否有突出資料
                 radius = 1.2,                    #半徑
                 pctdistance = 0.4,              #數值與圓餅圖的圓心距離
                 center = (-9,0),                #圓心座標
                 textprops = {"fontsize" : 6},   #文字大小
                 labeldistance = 1.3,             #標籤顯示位置
-                shadow = True)                   #是否有陰影
+                shadow = False)                   #是否有陰影
         plt.axis('equal')      #讓圓餅圖比例相等           
         # plt.legend(loc = "center right")
 
