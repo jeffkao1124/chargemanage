@@ -125,9 +125,7 @@ def index():
 
 
         plt.rcParams["font.family"]="SimHei"
-        # data = [food,cloth,sleep,walk,education,play,unknown]
-        # category =['Food','Clothing','Housing',"Transportation",'Education','Entertainment','Others']
-        # color = ["red", "lightblue", "pink", "green", "orange","blue","purple"]
+
         # separeted = (0, 0, 0, 0, 0, 0)
         plt.pie(data,                            #資料數值
                 labels = category,               #數值標籤
@@ -138,8 +136,8 @@ def index():
                 pctdistance = 0.4,              #數值與圓餅圖的圓心距離
                 center = (-9,0),                #圓心座標
                 textprops = {"fontsize" : 6},   #文字大小
-                labeldistance = 1.4,             #標籤顯示位置
-                shadow = False)                   #是否有陰影
+                labeldistance = 1.3,             #標籤顯示位置
+                shadow = True)                   #是否有陰影
         plt.axis('equal')      #讓圓餅圖比例相等           
         # plt.legend(loc = "center right")
 
