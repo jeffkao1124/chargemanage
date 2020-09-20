@@ -278,16 +278,18 @@ document.getElementById("btnhref").href ="javascript:divShow()";
         <p>累積花費{{ result }}</p>
 
             <!-- <img src="{{ img }}"></img> -->
-    <canvas id="myChart" width="100" height="50">
+    <canvas id="myChart" width="100" height="80">
     </canvas>
 <script>
     var ctx = document.getElementById("myChart").getContext('2d');
+        var Pie_data = {{ pie_data|tojson }};
+    var Pie_category = {{ pie_category|tojson }};
 var myChart = new Chart(ctx, {
     type: 'pie',
     data: {
-        labels: ["星期一", "星期二", "星期三", "星期四", "星期五", "星期六"],
+        labels:Pie_category,
         datasets: [{            
-            data: [12, 19, 3, 5, 2, 3],
+            data: Pie_data,
             backgroundColor: [
              'rgba(255, 99, 132, 0.7)',
              'rgba(54, 162, 235, 0.7)',
