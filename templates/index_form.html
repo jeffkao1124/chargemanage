@@ -76,13 +76,7 @@
                 {% endfor%}
             </tbody>
         </table>
-        <br/>
-        <p class="text-background" align="left" style="font-size:18px;"><strong> &nbsp目前累積消費：</strong></p>
-        <p>{{ result }}</p>
-        <p>
-            <img src="{{ img }}"  >
-        </p>
-        <p class="text-background" align="left" style="font-size:18px;"><strong>&nbsp編輯：</strong></p>
+                <p class="text-background" align="left" style="font-size:18px;"><strong>&nbsp編輯：</strong></p>
         <script>
             function deleteOption(list){
                 var index=list.selectedIndex;
@@ -123,6 +117,13 @@
             <br/>
             <input type="button" name="ok" id="delete" value="刪除所有資料"><br>
             <br/>
+        <br/>
+        <p class="text-background" align="left" style="font-size:18px;"><strong> &nbsp目前累積消費：</strong></p>
+        <p>{{ result }}</p>
+        <p>
+            <img src="{{ img }}"  >
+        </p>
+
 </div>
 </body>
 </html>
