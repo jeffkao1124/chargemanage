@@ -39,7 +39,6 @@ class usermessage(db.Model):
 def index():
     if request.method == 'POST':
         userId = request.values['userId']
-        SaveMsgNumber = usermessage.query.order_by(usermessage.birth_date).filter(usermessage.user_id==userId).filter(usermessage.status=='save').filter(usermessage.type=='user').count()
         data_SaveData = usermessage.query.order_by(usermessage.birth_date).filter(usermessage.user_id==userId).filter(usermessage.status=='save').filter(usermessage.type=='user')
         save_dic = {}
         save_list = []
@@ -50,7 +49,6 @@ def index():
             save_dic['account'] = _Data.account
             save_dic['message'] = _Data.message
             save_list.append(save_dic)
-            save_dic = {}
 
         add=0
         food=0
@@ -60,7 +58,7 @@ def index():
         education=0
         play=0
         unknown=0
-        for i in range(SaveMsgNumber):
+        for i in range(len(save_list)):
             Message = save_list[i]['message']
             if "食/" in Message:
                 food+= int(save_list[i]['account'])
