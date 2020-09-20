@@ -22,6 +22,7 @@
 	}
     function pushMsg() {
         var msg = '刪除';
+        if (confirm("確認要刪除？")){
         liff.sendMessages([  //推播訊息
 			{ type: 'text',
 			  text: msg
@@ -31,7 +32,9 @@
 			alert('已刪除所有資料');
             window.location.reload();
 			});
-
+        }else{
+            window.event.returnValue = false;
+        }
 
     }
 
@@ -185,11 +188,11 @@ th{
 <div align="center">
     <ul>
         <li><img src="https://imgur.com/JV8bflw.png" width=100px height=auto align=center></img></li>
-        <li><h1 style="line-height:100px;"><strong>記帳</strong></h1></li>
+        <li><h1 style="line-height:100px;"><strong>查帳</strong></h1></li>
     </ul>        
     <div class="di">
         <p class="text-background" align="left" style="font-size:18px;">
-            <strong> &nbsp目前記帳清單：</strong>
+            <strong> &nbsp目前帳目：</strong>
             <a href="javascript:divShow();" id="btnhref" class="btn-slide">展開清單</a>
             </p>
     </div>
@@ -206,7 +209,7 @@ document.getElementById("btnhref").href ="javascript:divShow()";
 }
 </script>
 <div id="btnshow" style="display: none;">
-        <table width=82% style="border-collapse:collapse; border:2px #FFAF60 solid;" cellpadding="10" border='1'>
+        <table>
             <thead align="center">
                 <th >編號</th>
                 <th>項目</th>
@@ -229,23 +232,24 @@ document.getElementById("btnhref").href ="javascript:divShow()";
                 var index=list.selectedIndex;
                 var msg = 'delete';
                 msg=msg+index;
-            if(index>0){        
+            if(index>0 && confirm("確認要刪除該筆帳？")){        
                 liff.sendMessages([  
                 { type: 'text',
                   text: msg
                 },
             ])
             .then(() => {
-                alert('已刪除該筆資料');
+                alert('已刪除該筆帳');
                 window.location.reload();
                 });
+            }else{window.event.returnValue = false;
             }
     
                 if (index>0)
                     list.options[index]=null;
     
                 else
-                    alert("無資料可以刪除！");
+                    alert("尚未選擇欲刪除帳目！");
             }
             
             </script>
