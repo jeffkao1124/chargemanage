@@ -74,10 +74,9 @@ def index():
                 education+= int(save_list[i]['account'])
             elif "樂/" in Message:
                 play+= int(save_list[i]['account'])
-            elif "其他/" in Message:
-                unknown+= int(save_list[i]['account'])
             else:
-                continue
+                unknown+= int(save_list[i]['account'])
+                
             try:
                 money = int(save_list[i]['account'])
             except:
