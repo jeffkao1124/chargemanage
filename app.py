@@ -117,6 +117,9 @@ def index():
             color.append("#ffd8f9")
             separeted.append(0.02)
         
+        pie_data=data
+        print(pie_data)
+        sys.stdout.flush()
         plt.rcParams['figure.dpi'] = 200  # 分辨率
         plt.figure(facecolor='#FFEEDD',edgecolor='black',figsize=(2.6,2))
         plt.rcParams['savefig.dpi'] = 150  # 圖片像素
