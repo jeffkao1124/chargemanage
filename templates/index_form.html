@@ -22,6 +22,7 @@
 	}
     function pushMsg() {
         var msg = '刪除';
+        if (confirm("確認要刪除？")){
         liff.sendMessages([  //推播訊息
 			{ type: 'text',
 			  text: msg
@@ -31,7 +32,9 @@
 			alert('已刪除所有資料');
             window.location.reload();
 			});
-
+        }else{
+            window.event.returnValue = false;
+        }
 
     }
 
