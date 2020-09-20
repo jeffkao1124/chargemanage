@@ -74,10 +74,7 @@ def index():
                 education+= int(save_list[i]['account'])
             elif "樂/" in Message:
                 play+= int(save_list[i]['account'])
-            elif "其他/" in Message:
-                unknown+= int(save_list[i]['account'])
-            else:
-                continue
+                
             try:
                 money = int(save_list[i]['account'])
             except:
@@ -118,11 +115,6 @@ def index():
             data.append(play)
             category.append('Entertainment')
             color.append("#ffd8f9")
-            separeted.append(0.02)
-        if unknown!=0:
-            data.append(unknown)
-            category.append('Others')
-            color.append("purple")
             separeted.append(0.02)
         
         plt.rcParams['figure.dpi'] = 200  # 分辨率
