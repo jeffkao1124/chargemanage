@@ -23,7 +23,7 @@
 
 	}
     function pushMsg() {
-        var msg = '刪除';
+        var msg = '@刪除';
         if (confirm("確認要刪除所有帳目？")){
         liff.sendMessages([  //推播訊息
 			{ type: 'text',
@@ -234,7 +234,7 @@ document.getElementById("btnhref").href ="javascript:divShow()";
         <script>
             function deleteOption(list){
                 var index=list.selectedIndex;
-                var msg = 'delete';
+                var msg = '@delete';
                 msg=msg+index;
             if(index>0 && confirm("確認要刪除？")){        
                 liff.sendMessages([  
